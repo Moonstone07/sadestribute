@@ -303,7 +303,15 @@ figure img {
     margin: var(--margin_xs) 0 var(--margin_md) 0;
 }
 
-
+.clamp_txt {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: calc(1.5em * 3);
+    max-height: -webkit-fit-content;
+    -webkit-line-clamp: 3;
+}
 
 /* Gallery */
 
