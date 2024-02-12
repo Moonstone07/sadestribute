@@ -111,6 +111,10 @@ a {
     color: var(--text_color);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 :root {
     --background_color: #595856;
