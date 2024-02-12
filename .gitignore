@@ -1,0 +1,115 @@
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Compiled source #
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+*.log
+*.sql
+*.sqlite
+
+# Temporary files #
+*.bak
+*.swp
+*~.nib
+*.swp
+*.tmp
+
+# IDEs and Editors #
+/.vscode
+/.idea
+
+# Node.js #
+/node_modules
+
+# Python #
+*.pyc
+
+# Java #
+*.class
+
+# Compiled Java #
+*.jar
+
+# Dependency directories #
+/.venv/
+/.idea/
+/.gradle/
+/target/
+/build/
+
+# macOS #
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode #
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcworkspace
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+
+# Flutter/Dart #
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub/
+/build/
+
+# Android #
+/build/
+.gradle/
+/local.properties
+/.idea/workspace.xml
+/.idea/tasks.xml
+/.idea/gradle.xml
+/.idea/libraries
+.DS_Store
+/captures
+.DS_Store
+*.iml
+
+# iOS #
+Pods/
+*/Podfile.lock
+*/.symlinks/
+*.pbxproj
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcworkspace
+*.xcuserstate
+DerivedData/
+.idea/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM

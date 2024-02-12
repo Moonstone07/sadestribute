@@ -1,0 +1,682 @@
+/* General */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    /* aspect-ratio: 1/1; */
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/*
+  9. Remove default button styles
+*/
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*
+  10. Remove default list styles
+*/
+ul[role="list"],
+ol[role="list"],
+li {
+    list-style: none;
+}
+
+/*
+  11. Set core body defaults
+*/
+body {
+    min-height: 100vh;
+}
+
+/* Custom fonts */
+
+@font-face {
+    font-family: 'OnestaVigano';
+    src: url('./fonts/OnestaVigano-X3BlK.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* anchors */
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text_color);
+}
+
+
+:root {
+    --background_color: #595856;
+    --text_color: #FFCFA8;
+    --text_color_light: #E6D5CE;
+    --primary_color: #2A3340;
+    --secondary_color: #A6A6A6;
+    --terciary_color: #D9B18F;
+
+
+
+    --padding_sm: 1.25rem;
+    --padding_md: 2.5rem;
+    --padding_lg: 3.75rem;
+    --padding_xl: 5rem;
+
+    --margin_xs: 0.625rem;
+    --margin_sm: 1.25rem;
+    --margin_md: 2.5rem;
+    --margin_lg: 3.75rem;
+    --margin_xl: 5rem;
+
+    --border_radius_sm: 0.625rem;
+    --border_radius_md: 1.25rem;
+    --border_radius_lg: 1.875rem;
+
+    --font_size_sm: 0.875rem;
+    --font_size_md: 1rem;
+    --font_size_lg: 1.125rem;
+    --font_size_xl: 1.25rem;
+    --font_size_xxl: 1.5rem;
+
+    --heading_size_lg: 3rem;
+    --heading_size_xl: 4rem;
+    --heading_size_xxl: 6rem;
+
+
+    --font_family_manrope: "Manrope", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font_family_manrope);
+    color: var(--text_color);
+    background-color: var(--background_color);
+}
+
+main {
+    padding: var(--padding_sm);
+}
+
+section {
+    margin-bottom: var(--margin_xl);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'OnestaVigano', serif;
+    color: var(--text_color_light);
+    letter-spacing: 1.5px;
+}
+
+h2,
+h3 {
+    font-size: var(--heading_size_lg);
+    margin-bottom: var(--margin_sm);
+}
+
+.logo {
+    width: 100px;
+}
+
+/* Mobile Menu Styles */
+
+.wrapper_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding_sm);
+}
+
+#toggle-menu {
+    font-size: var(--font_size_xxl);
+    color: var(--text_color_light);
+}
+
+.mobile-menu ul {
+    display: none;
+    padding: var(--padding_sm);
+    transform: translateY(-100%);
+    transition: transform 1s ease-in-out;
+}
+
+.mobile-menu ul.show {
+    display: block;
+    transform: translateY(0);
+}
+
+.mobile-menu ul li {
+    padding: var(--padding_sm) 0;
+    border-bottom: 1px solid var(--text_color);
+}
+
+/* Desktop Menu */
+.desktop-menu {
+    display: none;
+}
+
+
+/* Hero Section */
+
+.title {
+    font-size: var(--heading_size_lg);
+    line-height: 1;
+    text-align: center;
+    margin-bottom: var(--margin_xs);
+}
+
+.big_banner p {
+    font-size: var(--font_size_sm);
+    font-weight: 200;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: var(--margin_sm);
+}
+
+/* Tribute Section */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding_sm);
+    position: relative;
+}
+
+.about_text {
+    position: absolute;
+    top: 80%;
+    z-index: 1;
+    padding: var(--padding_sm);
+}
+
+.about_text h2 {
+    color: var(--background_color_banner);
+    margin: 0;
+}
+
+figure img {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Discography Section */
+.discography p {
+    margin-bottom: var(--margin_md);
+}
+
+.grid_container_disc {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: var(--margin_sm);
+    padding: var(--padding_sm);
+}
+
+.grid_item img {
+    width: 100%;
+}
+
+/* Blog Section */
+
+.blog a {
+    color: var(--background_color_dark);
+    font-size: var(--font_size_md);
+    line-height: 1.2;
+    margin: var(--margin_xs) 0 var(--margin_md) 0;
+}
+
+
+
+/* Gallery */
+
+
+.masonry {
+    column-gap: 1em;
+}
+
+.masonry.one-column {
+    column-count: 1;
+}
+
+.masonry.two-columns {
+    column-count: 2;
+}
+
+.masonry.three-columns {
+    column-count: 3;
+}
+
+.masonry img {
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--margin_sm);
+}
+
+/* footer */
+
+footer {
+    padding: var(--padding_sm);
+}
+
+.footer_links ul,
+.footer_logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--margin_sm);
+    margin-bottom: var(--margin_sm);
+}
+
+.footer_social ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--margin_md);
+}
+
+
+/* Styles for blog page */
+
+.small_banner_single {
+    padding: var(--padding_lg);
+    position: relative;
+}
+
+.small_banner_single h2 {
+    position: absolute;
+    top: 55%;
+    left: 60%;
+    z-index: 1;
+    font-size: var(--font_size_lg);
+    text-align: right;
+    color: var(--primary_color);
+}
+
+.blog_single_flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--margin_sm);
+    padding: var(--padding_sm);
+}
+
+.img_single {
+    margin-bottom: var(--margin_md);
+}
+
+.single_flex_right p {
+    font-size: var(--font_size_md);
+    line-height: 1.5;
+    margin-bottom: var(--margin_sm);
+}
+
+/* Animations on scroll */
+
+/* Add the animate-on-scroll class to elements you want to animate */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Define the animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In Down */
+.fadeInDown {
+    animation: fadeInDown 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In Left */
+.slideInLeft {
+    animation: slideInLeft 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Zoom In */
+.zoomIn {
+    animation: zoomIn 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Rotate In */
+.rotateIn {
+    animation: rotateIn 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(-90deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}
+
+
+
+/* Media Queries */
+
+
+@media screen and (min-width: 768px) {
+
+    .mobile-menu {
+        display: none;
+    }
+
+    .desktop-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--padding_sm);
+    }
+
+    .desktop-menu ul {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: var(--margin_md);
+    }
+
+    /* hero section */
+    .title {
+        font-size: var(--heading_size_lg);
+        margin-top: var(--margin_md);
+    }
+
+    .big_banner p {
+        font-size: var(--font_size_md);
+    }
+
+    /* tribute section */
+
+    .about {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: var(--padding_sm);
+    }
+
+    .about_text {
+        position: absolute;
+        top: 90%;
+        z-index: 1;
+        padding: var(--padding_sm);
+        font-size: var(--font_size_xl);
+    }
+
+    /* discography section */
+
+    .discography {
+        margin: var(--margin_xl) 0;
+    }
+
+    .discography p {
+        width: 75%;
+        padding: var(--padding_sm);
+        margin: var(--margin_md) auto;
+        font-size: var(--font_size_xl);
+    }
+
+    /* blog */
+    .grid_container_blog {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: var(--margin_sm);
+        padding: var(--padding_sm);
+    }
+
+    /* footer */
+    .footer_links ul,
+    .footer_logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: var(--padding_sm);
+    }
+
+    /* Styles for blog page */
+
+    .small_banner_single {
+        padding: var(--padding_lg);
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    /* desktop menu */
+
+    .desktop-menu ul li a:hover {
+        color: var(--background_color_dark);
+        text-decoration: underline;
+        transition: all 0.3s ease;
+    }
+
+    /* hero section */
+    .title {
+        font-size: var(--heading_size_xxl);
+        margin-top: var(--margin_lg);
+    }
+
+    .big_banner p {
+        font-size: var(--font_size_xl);
+    }
+
+    /* tribute section */
+
+    .about {
+        position: relative;
+        padding: 520px 0;
+    }
+
+    figure img {
+        position: absolute;
+        width: 700px;
+        height: 900px;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    .about_text {
+        position: absolute;
+        top: 60%;
+        left: 9%;
+        z-index: 1;
+    }
+
+
+    .discography {
+        padding: var(--padding_xl);
+    }
+
+    .discography p {
+        width: 50%;
+        font-size: var(--font_size_xl);
+        line-height: 1.5;
+        margin-bottom: var(--margin_lg);
+    }
+
+
+    /* blog */
+
+
+    .blog {
+        padding: 300px 0;
+    }
+
+    .grid_container_blog {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* Blog page */
+
+    .small_banner_single {
+        padding: var(--padding_xl);
+        height: 60vh;
+    }
+
+    .small_banner_single h2 {
+        font-size: var(--heading_size_lg);
+        top: 50%;
+        left: 50%;
+    }
+
+    .small_banner_single img {
+        width: 50%;
+        height: auto;
+        padding-right: var(--padding_xl);
+    }
+
+    .blog_single_flex {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--padding_sm);
+    }
+
+    .single_flex_right {
+        width: 50%;
+    }
+
+
+}
+
+@media screen and (min-width: 1440px) {
+
+    .about_text {
+        position: absolute;
+        top: 60%;
+        left: 36%;
+        z-index: 1;
+    }
+}
